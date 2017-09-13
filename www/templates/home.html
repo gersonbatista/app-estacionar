@@ -1,0 +1,48 @@
+  <ion-view hide-nav-bar="true">
+  <ion-content>
+
+  <div class="col col-center text-center">
+    <h1>Meu Veículo</h1>
+  </div>
+
+   <form>
+     <label class="col-sm-2 control-label">Última notificação recebida: {{data | date:'medium'}}</label>
+
+     <ion-slide-box>
+        <ion-slide ng-repeat="notificacao in notificacoes">
+            <div style="width:200px;height:150px;margin:auto;display:block" >
+              <h4>{{notificacao.nome}}</h4>
+              <h4>{{notificacao.placa}}</h4>
+              <h4>{{notificacao.fone}}</h4>
+              <h4>{{notificacao.msg}}</h4>
+          </div>
+        </ion-slide>
+    </ion-slide-box>
+
+    <div class="item item-input-inset">
+        <button class="button icon-left ion-checkmark-round button-positive " style="width: 200px; height: 50px">
+            Conf. Leitura
+        </button>
+        <div class="row">
+           <div class="col text-right">
+          <a href="#/menu/pesquisar">  <button class="button button-positive icon ion-search" style="width: 150px; height: 50px" ng -click="paginaPesquisar();">
+             Pesquisar
+            </button></a>
+          </div>
+        </div>
+      </div>
+      <div class="item item-input-inset">
+        <button class="button icon-left ion-location button-positive" style="width: 200px; height: 50px" ng-click="fazCheckin();">
+            Check in
+        </button>
+        <div class="row">
+           <div class="col text-right">
+            <button class="button icon-left ion-arrow-right-a   button-positive" style="width: 150px; height: 50px" ng-click="fazCheckout();">
+             Check out
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+  </ion-view>

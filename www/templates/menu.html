@@ -1,0 +1,54 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+   
+      <div class="card" style="margin:0;padding: 0;">
+        <div class="item item-text-wrap">
+                <div class="item item-avatar">
+          <img src="">
+          <h2>{{nome}} </h2>
+          <p>{{email}}</p>
+        </div>
+        </div>
+      </div>
+      <ion-list>
+        <ion-item menu-close href="#/menu/home">
+        <i class="icon ion-home"></i>
+            Início
+        </ion-item>
+
+        <ion-item menu-close href="#/menu/pesquisar">
+          <i class="icon ion-search"></i>
+            Pesquisar
+        </ion-item>
+        
+         <ion-item menu-close href="#/menu/feedback">
+         <i class="icon ion-android-contacts"></i>
+           Feedback
+        </ion-item>
+        
+         <ion-item menu-close href="#/app/login">
+          <i class="icon ion-android-exit "></i>
+          Encerrar
+        </ion-item>
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

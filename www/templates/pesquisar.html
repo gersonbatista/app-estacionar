@@ -1,0 +1,46 @@
+  <ion-view hide-nav-bar="true">
+  <ion-content>
+
+  <div class="col col-center text-center">
+    <h1>Pesquisar</h1>
+  </div>
+
+   <form>
+    <div class="list">
+       <label class="item item-input item-stacked-label">
+          <span class="input-label"><strong>Placa</strong></span>
+          <input type="text" ui-mask="AAA-9999" ng-model="placa"  style="text-transform:uppercase">
+        </label>
+        <label class="item">
+              <button class="button button-block button-positive" ng-click="pesquisar(placa)">Pesquisar</button>
+        </label>
+
+      </div>
+
+      <div ng-if="existeVeiculo">
+          <ion-slide-box>
+            <ion-slide>
+               <div style="width:200px;height:150px;margin:auto;display:block" >
+                <h3>{{veiculo.nome}}</h3>
+                <h4>{{veiculo.fone}}</h4>
+                <h4>{{veiculo.saida}}</h4>
+              </div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <div class="list">
+
+          <ion-radio ng-model="opcao" ng-value="1">Retirar carro da vaga</ion-radio>
+          <ion-radio ng-model="opcao" ng-value="2">Farol acesso</ion-radio>
+           <ion-radio ng-model="opcao" ng-value="3">Comparecer no estacionamento</ion-radio>
+
+        <label class="item">
+              <button class="button button-block button-positive" ng-click="notificar();">Notificar</button>
+        </label>
+
+      </div>
+
+      </div>
+    </form>
+  </ion-content>
+  </ion-view>
