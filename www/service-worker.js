@@ -1,3 +1,7 @@
+'use strict';
+
+console.log('Service Worker Started', self);
+
 
 self.addEventListener('activate', function (event) {
 

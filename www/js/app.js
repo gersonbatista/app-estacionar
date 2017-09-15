@@ -6,9 +6,9 @@
 // 'starter.controllers' is found in controllers.js
 var appCtrl = angular.module('starter.controllers', []);
 var appService = angular.module('starter.services', []);
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.config', 'ngCurrencyMask', 'ui.mask', 'ui.utils.masks', 'ngCordova'])
-
-//angular.module('starter', ['ionic','starter.config', 'starter.controllers', 'starter.services', 'ngCurrencyMask', 'ui.mask', 'ui.utils.masks'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 
+                           'starter.config', 'ngCurrencyMask', 'ui.mask',
+                            'ui.utils.masks', 'ngCordova', 'auth0.auth0'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, angularAuth0Provider) {
   $stateProvider
 
   .state('app', {
@@ -40,7 +40,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     views: {
       'menuContent' : {
         templateUrl : 'templates/login.html',
-        controller : 'LoginCtrl'
+        controller : 'LoginCtrl',
+        controllerAs: 'vm'
       }
     }
   })
@@ -90,6 +91,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'HomeCtrl'
         }
       }
+    });
+
+    angularAuth0Provider.init({
+      clientID: 'gpjk557CnXkVHvpV-Qk3jHcSaWL_XrWL',
+      domain: 'estacionar.auth0.com',
+      responseType: 'token id_token',
+      callbackURL: location.href,
+      audience: 'https://estacionar.auth0.com/userinfo',
+      redirectUri: 'http://localhost:3000/callback',
+      scope: 'openid'
     });
 
   // if none of the above states are matched, use this as the fallback

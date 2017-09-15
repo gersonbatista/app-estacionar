@@ -1,39 +1,38 @@
-  <ion-view hide-nav-bar="true">
-    <ionpane class="login-custom">
-      <ion-content>
-        <h1>Estacionar</h1>
-         <!--<div>
-         <img src="img/icone.jpg" class="centralizado" />
-        </div>-->
+<ion-view hide-nav-bar="true">
+  <ionpane class="login-custom">
+    <ion-content>
+      <h1>Estacionar</h1>
+       <!--<div>
+       <img src="img/icone.jpg" class="centralizado" />
+      </div>-->
 
-        <form > <br><br>
-          <div class="list">
-            <ionitem class="item-input"> 
-                <i class="icon ion-ios-person-outline placeholder-icon"></i>
-                <input type="text" ng-model="loginData.username" placeholder="Login">
-            </ionitem>
+      <form > <br><br>
+        <div class="list">
+          <ionitem class="item-input"> 
+              <i class="icon ion-ios-person-outline placeholder-icon"></i>
+              <input type="text" ng-model="loginData.username" placeholder="Login">
+          </ionitem>
 
-            <ionitem class="item-input"> 
-                <i class="icon ion-ios-locked-outline placeholder-icon"></i>
-                <input type="password" ng-model="loginData.password" placeholder="Senha">
-            </ionitem>
+          <ionitem class="item-input"> 
+              <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+              <input type="password" ng-model="loginData.password" placeholder="Senha">
+          </ionitem>
 
-            <button id="btnlogin" class="button button-block icon-left ion-social-facebook button-positive" type="button"> Logar com Facebook </button>
+          <label class="item">
+              <button class="button button-block button-positive" ng-click="vm.loginAplicacao(loginData);">Entrar</button>
+          </label>
+        </div>
 
-            <label class="item">
-                <button class="button button-block button-positive" ng-click="login(loginData);">Entrar</button>
-                
-                
-            </label>
-          </div>
+        <h4>
+          Pare realizar login pelas redes sociais <a ng-click="vm.auth.login()">Social login</a>
+        </h4>
 
-          <div class="footer text-small text-center">
-            <label class="item">
-            <a href="#/app/cadastrar-conta"><button class="button button-block button-outline button-positive">Nova Conta</button></a>
-            </label>
-          </div>
-        </form>
-      </ion-content>
-    </ionpane>
-  </ion-view>
-  
+        <div class="footer text-small text-center">
+          <label class="item">
+          <a href="#/app/cadastrar-conta"><button class="button button-block button-outline button-positive">Nova Conta</button></a>
+          </label>
+        </div>
+      </form>
+    </ion-content>
+  </ionpane>
+</ion-view>

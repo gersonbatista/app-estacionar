@@ -2,7 +2,9 @@ angular.module('starter.config', [])
 .constant("constants", {
 	BASE_URL: (function() {
 		var AMBIENTE = {
-	    	'localhost:8100': 'localhost:8080'
+			'localhost:8100': 'localhost:8080', 
+			'localhost:8080': 'localhost:8080',
+			'127.0.0.1:8887': 'localhost:8080'
 		};
 		
 		return location.protocol+"//"+AMBIENTE[location.host]+"/estacionar/api";
