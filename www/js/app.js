@@ -8,7 +8,7 @@ var appCtrl = angular.module('starter.controllers', []);
 var appService = angular.module('starter.services', []);
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 
                            'starter.config', 'ngCurrencyMask', 'ui.mask',
-                            'ui.utils.masks', 'ngCordova', 'auth0.auth0'])
+                            'ui.utils.masks', 'ngCordova', 'satellizer'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, angularAuth0Provider) {
+.config(function($stateProvider, $urlRouterProvider, $authProvider) {
   $stateProvider
 
   .state('app', {
@@ -93,7 +93,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
       }
     });
 
-    angularAuth0Provider.init({
+    /*angularAuth0Provider.init({
       clientID: 'gpjk557CnXkVHvpV-Qk3jHcSaWL_XrWL',
       domain: 'estacionar.auth0.com',
       responseType: 'token id_token',
@@ -101,8 +101,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
       audience: 'https://estacionar.auth0.com/userinfo',
       redirectUri: 'http://localhost:3000/callback',
       scope: 'openid'
-    });
+    });*/
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
+
+  $authProvider.facebook({
+    clientId: '238347096691612'
+  });
+
 });

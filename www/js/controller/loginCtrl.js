@@ -6,15 +6,15 @@
       .module('starter')
       .controller('LoginCtrl', loginController);
   
-    loginController.$inject = ['authService', '$scope', '$ionicModal','$ionicPopup', '$timeout', '$location', '$state', 'LoginAPI'];
+    loginController.$inject = ['$scope', '$ionicModal','$ionicPopup', '$timeout', '$location', '$state', 'LoginAPI', '$auth'];
   
-    function loginController(authService, $scope, $ionicModal,$ionicPopup, $timeout, $location, $state, LoginAPI) {
+    function loginController($scope, $ionicModal,$ionicPopup, $timeout, $location, $state, LoginAPI, $auth) {
   
-      var vm = this;
-      vm.auth = authService;
+      //var vm = this;
+      //vm.auth = authService;
 
          // Abra o modo de login
-    vm.loginAplicacao = function(loginData) {
+    $scope.loginAplicacao = function(loginData) {
        if(!loginData){
         $ionicPopup.alert({
               title: 'Erro',
@@ -47,6 +47,11 @@
               
             });
       });
+    };
+
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
     };
   
   }
