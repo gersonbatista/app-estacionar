@@ -1,0 +1,43 @@
+<!-- <ion-view hide-nav-bar="true"> -->
+    <ion-content>
+  
+    <div class="col col-center text-center">
+      <h1>Nova Conta</h1>
+    </div>
+  
+     <form ng-submit="cadastroEscabelecimento(form)">
+      <div class="list">
+         <label class="item item-input item-stacked-label">
+            <span class="input-label field-required"><strong>Nome</strong></span>
+            <input type="text" ng-model="form.nome" required >
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label field-required"><strong>CNPJ</strong></span>
+            <input type="text" ui-mask="99.999.999/9999-99" ng-model="form.cnpj" required>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label field-required"><strong>Endereço</strong></span>
+            <input type="text" ng-model="form.endereco" required>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label field"><strong>E-mail</strong></span>
+            <input type="email" ng-model="form.email" ng-minlength="5">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label field-required"><strong>Quantidade de vagas</strong></span>
+            <input type="number" ng-model="form.qntVagas" maxlength="4" required>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label field-required"><strong>Horário de funcionamento</strong></span>
+            <input type="time" ng-model="form.hrInicial" required>
+            <input type="time" ng-model="form.hrFinal" required>
+        </label>
+        <label class="item">
+            <button class="button button-block button-positive" type="submit">Cadastrar</button>
+         </label>
+  
+        </div>
+      </form>
+    </ion-content>
+    <!-- </ion-view> -->
+  

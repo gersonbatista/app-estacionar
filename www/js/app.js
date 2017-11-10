@@ -46,6 +46,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
     }
   })
 
+  .state('app.tab-conta', {
+    url: '/tab-conta',
+    views: {
+      'menuContent' : {
+        templateUrl : 'templates/tab_conta.html'
+      }
+    }
+  })
+
   .state('app.cadastrar-conta', {
     url: '/cadastrar-conta',
     views: {
@@ -56,7 +65,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
     }
   })
 
-  .state('app.esqueci-senha', {
+  .state('app.cadastrar-estabelecimento', {
+    url: '/cadastrar-estabelecimento',
+    views: {
+      'menuContent' : {
+        templateUrl : 'templates/estabelecimento.html',
+        controller : 'CadastroCtrl'
+      }
+    }
+  })
+ 
+  .state('app.tab-dash', {
+    url: '/tab-dash',
+    views: {
+      'teste' : {
+        templateUrl : 'templates/tab-dash.html',
+        controller : 'CadastroCtrl'
+      }
+    }
+  })
+
+   .state('app.esqueci-senha', {
     url: '/esqueci-senha',
     views: {
       'menuContent' : {
@@ -109,5 +138,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
   $authProvider.facebook({
     clientId: '238347096691612'
   });
+
+  $authProvider.google({
+    clientId: '903809580950'
+   // url: 'http://localhost:3000/auth/google'
+  });
+
+  
 
 });

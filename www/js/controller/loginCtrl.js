@@ -51,9 +51,20 @@
 
 
     $scope.authenticate = function(provider) {
-      $auth.authenticate(provider);
+      $auth.authenticate(provider)
+        .then(function() {
+          $ionicPopup.alert({
+            title: 'Success',
+            content: 'You have successfully logged in!'
+          })
+        })
+        .catch(function(error) {
+          $ionicPopup.alert({
+            title: 'Error',
+            content: error.message || (error.data && error.data.message) || error
+          });
+        });
     };
-  
   }
   
   })();
